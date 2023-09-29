@@ -18,7 +18,7 @@ for (let i = 0; i < (Object.keys(recipes).length); i++) {
 recipeNames.forEach((key) => {
     tableauReussis.push(key);
 })
-console.table(tableauReussis.name)
+console.table(tableauReussis)
 
 let list = document.getElementById("recipe-list") as HTMLDataListElement;
 
@@ -28,7 +28,19 @@ tableauReussis.forEach((recipe:any) => {
     celluleButton.classList.add("btn", "btn-dark", "Summon")
     celluleButton.textContent = recipe.name; // mettre le nom dans chaque bouton
     list.appendChild(celluleButton);
+
+    let rcpshow = document.getElementById("recipe-show") as HTMLElement
+
+    let summon = document.querySelector("Summon")
+    summon?.addEventListener("click",()=>{
+        tableauReussis.forEach((recipe:any) => {
+            let celluleRecipe: HTMLDivElement = document.createElement("div");
+            celluleRecipe.textContent = recipe.instructions; // mettre le nom dans chaque bouton
+            rcpshow.appendChild(celluleRecipe);
+        });
+    })
 });
+
 
 
 
