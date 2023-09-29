@@ -28,7 +28,7 @@ let classe = [person1, person2]
 
 let exemple = document.querySelector(".table tbody")
 
-function ajoutEleve() {
+function initEleve() {
     for (let k = 0; k < classe.length; k++) {
         for (let j = 0; j < classe[k].matierePers.length; j++) {
             for (let i = 0; i < classe[k].matierePers.length; i++) {
@@ -65,28 +65,28 @@ function ajoutEleve() {
     }
 }
 
-ajoutEleve()
+initEleve()
 
+eleveAdd.addEventListener("click", addEleve)
 
-eleveAdd.addEventListener("click", function (e) {
+function addEleve(e) {
     e.preventDefault
     let firstNameNew = document.getElementById("prenom").textContent;
     let lastNameNew = document.getElementById("nom").textContent;
     let matierePersNew = ["Mathématique", "Français"];
-    let notePersNew = {
-        Mathématiques: [15, 18],
-        Français: [10, 14],
-    }
 
     let newPerson = {
         firstName: firstNameNew,
         lastName: lastNameNew,
-        matierePers: matierePersNew,
-        notePers: notePersNew,
+        matierePers: "",
+        notePers: "",
     };
+
     classe.push(newPerson);
-    ajoutEleve()
-})
+    initEleve
+    console.table(classe)
+}
+
 
 
 
@@ -100,7 +100,3 @@ function ajoutMatiere() {
 
 
 
-
-
-
-console.log(newPerson.firstName + newPerson.lastName + newPerson.matierePers + newPerson.notePers.Mathématiques)
