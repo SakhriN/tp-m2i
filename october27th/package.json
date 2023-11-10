@@ -1,0 +1,11 @@
+{
+  "name": "october27th",
+  "version": "1.0.0",
+  "description": "Travail du vendredi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nassim Sakhri",
+  "license": "ISC"
+}
