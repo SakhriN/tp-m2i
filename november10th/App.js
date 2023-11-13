@@ -1,22 +1,23 @@
-import { Text, View } from "react-native"
-import { StyleSheet, Text, View } from 'react-native'
+
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import home from "./screens/home"
-import meal from "./screens/meal"
-import about from "./screens/about"
+import Home from "./screens/Home"
+import MealScreen from "./screens/MealScreen"
+import AboutScreen from "./screens/AboutScreen"
 
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
+
+  return (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName="home">
-      <Stack.Screen name="home" component={home} options={{ headerShown: false }}></Stack.Screen>
-      <Stack.Screen name="meal" component={meal}></Stack.Screen>
-      <Stack.Screen name="about" component={about}></Stack.Screen>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      <Stack.Screen name="MealScreen" component={MealScreen}/>
+      <Stack.Screen name="AboutScreen" component={AboutScreen}/>
     </Stack.Navigator>
   </NavigationContainer>
-
+  )
 }
