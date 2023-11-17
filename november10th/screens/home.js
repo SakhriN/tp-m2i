@@ -1,46 +1,40 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { StyleSheet, Text, FlatList, Pressable } from "react-native";
+import { CATEGORIES, MEALS } from "../data/data";
+import { useState } from "react";
+export default function Home({ navigation }) {
+    const [Dio, setDio] = useState(CATEGORIES)
 
-export default function home({navigation}){
-    
 
-    return(
 
-        <ScrollView>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-            <View style={styles.test}><Text style={styles.text}>Bonjour</Text></View>
-        </ScrollView>
+
+    return (
+        <>
+            <FlatList data={Dio} numColumns={2} contentContainerStyle={styles.container} renderItem={({ item }) => {
+                return (
+                    <Pressable onPress={()=>navigation.navigate("MealScreen", {id:item.id})} style={styles.test}><Text style={{backgroundColor:item.color}}>{item.title}</Text></Pressable>
+                )
+            }
+            } keyExtractor={item => item.id} />
+        </>
+
     )
+
+
+
 }
 
 const styles = StyleSheet.create({
-test:{
-    width:50,
-    height:50,
-    backgroundColor:"gray",
-},
-text:{
-color:"white",
-}
+    container: {
+        alignContent: "center",
+    },
+
+    test: {
+        justifyContent: "space-between",
+        margin:20,
+    },
+    text: {
+        color: "black",
+    }
 })
 
 
