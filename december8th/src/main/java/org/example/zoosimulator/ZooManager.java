@@ -9,7 +9,6 @@ public class ZooManager {
 
     private ZooManager() {
         this.zooObservers = new ArrayList<>();
-        // Initialisation du gestionnaire du zoo
     }
 
     public static ZooManager getInstance() {
@@ -23,12 +22,9 @@ public class ZooManager {
         zooObservers.add(observer);
     }
 
-    // Notifie tous les observateurs d'un événement
     public void notifyObservers(String event) {
         for (ZooObserver observer : zooObservers) {
             observer.update(event);
         }
     }
-
-    // Autres méthodes et attributs spécifiques du gestionnaire du zoo
 }

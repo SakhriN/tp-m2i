@@ -10,7 +10,7 @@ public class MusicComposition {
     }
 
     public void playComposition() {
-        System.out.println("Playing music composition");
+        System.out.println("Musique de composition qui se lance");
         for (MusicInstrument instrument : instruments) {
             instrument.play();
         }

@@ -5,7 +5,6 @@ public class MusicAppSettings {
     private int volume;
 
     private MusicAppSettings() {
-        // Initialisation des paramètres globaux
         this.volume = 50;
     }
 

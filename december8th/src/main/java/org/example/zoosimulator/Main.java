@@ -10,11 +10,9 @@ public class Main {
         ZooVisitor visitor1 = new ZooVisitor("Jean-Eude");
         ZooVisitor visitor2 = new ZooVisitor("Didier");
 
-        // Ajout des observateurs au gestionnaire du zoo
         zooManager.addZooObserver(visitor1);
         zooManager.addZooObserver(visitor2);
 
-        // Simulation d'événements (arrivée de nouveaux animaux)
         AnimalFactory lionFactory = new LionFactory();
         AnimalFactory elephantFactory = new ElephantFactory();
 
