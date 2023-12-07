@@ -14,9 +14,9 @@ export default function App() {
   return (
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Stack.Screen name="MealScreen" component={MealScreen}/>
-      <Stack.Screen name="AboutScreen" component={AboutScreen}/>
+      <Stack.Screen name="Home" component={Home} options={{ title:"All Categories", headerShown: false }} />
+      <Stack.Screen name="MealScreen" component={MealScreen} options={{ title:"MealsOverview"}}/>
+      <Stack.Screen name="AboutScreen" component={AboutScreen} options={{ title:"About the Meal"}}/>
     </Stack.Navigator>
   </NavigationContainer>
   )

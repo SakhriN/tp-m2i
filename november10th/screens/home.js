@@ -1,4 +1,4 @@
-import { StyleSheet, Text, FlatList, Pressable } from "react-native";
+import { StyleSheet, Text, FlatList, Pressable, ScrollView } from "react-native";
 import { CATEGORIES, MEALS } from "../data/data";
 import { useState } from "react";
 export default function Home({ navigation }) {
@@ -8,14 +8,14 @@ export default function Home({ navigation }) {
 
 
     return (
-        <>
+        <ScrollView>
             <FlatList data={Dio} numColumns={2} contentContainerStyle={styles.container} renderItem={({ item }) => {
                 return (
-                    <Pressable onPress={()=>navigation.navigate("MealScreen", {id:item.id})} style={styles.test}><Text style={{backgroundColor:item.color}}>{item.title}</Text></Pressable>
+                    <Pressable onPress={() => navigation.navigate("MealScreen", { id: item.id })} style={[styles.test, { backgroundColor: item.color }]}><Text style={styles.text}>{item.title}</Text></Pressable>
                 )
             }
             } keyExtractor={item => item.id} />
-        </>
+        </ScrollView>
 
     )
 
@@ -25,14 +25,17 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        alignContent: "center",
     },
 
     test: {
-        justifyContent: "space-between",
-        margin:20,
+        margin: 20,
+        width: 170,
+        height: 170,
+
     },
     text: {
+        textAlign: "center",
+        lineHeight: 170,
         color: "black",
     }
 })
