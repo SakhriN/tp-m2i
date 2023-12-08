@@ -9,5 +9,6 @@ public class MusicInstrumentProxy implements MusicInstrument {
             realInstrument = new RealMusicInstrument();
         }
         realInstrument.play();
+        sout
     }
 }

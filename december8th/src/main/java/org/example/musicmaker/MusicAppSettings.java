@@ -14,7 +14,7 @@ public class MusicAppSettings {
         }
         return instance;
     }
-
+    sout
     public int getVolume() {
         return volume;
     }
