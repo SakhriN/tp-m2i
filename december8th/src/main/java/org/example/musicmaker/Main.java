@@ -14,6 +14,6 @@ public class Main {
                 .build();
 
         composition.playComposition();
-        sout
+
     }
 }

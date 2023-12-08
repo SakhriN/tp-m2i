@@ -8,7 +8,7 @@ public class MusicComposition {
     public MusicComposition(List<MusicInstrument> instruments) {
         this.instruments = instruments;
     }
-    sout
+
     public void playComposition() {
         System.out.println("Musique de composition qui se lance");
         for (MusicInstrument instrument : instruments) {

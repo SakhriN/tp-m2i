@@ -14,13 +14,13 @@ public class MusicAppSettings {
         }
         return instance;
     }
-    sout
+
     public int getVolume() {
         return volume;
     }
 
     public void setVolume(int volume) {
         this.volume = volume;
-        System.out.println("Volume set to: " + volume);
+        System.out.println("Mise a jour du volume a : " + volume);
     }
 }

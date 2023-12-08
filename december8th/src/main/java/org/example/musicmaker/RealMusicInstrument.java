@@ -5,5 +5,4 @@ public class RealMusicInstrument implements MusicInstrument {
     public void play() {
         System.out.println("Instrument de musique qui se lance.");
     }
-    sout
 }
