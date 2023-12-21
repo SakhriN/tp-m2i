@@ -1,20 +1,21 @@
+package org.example;
+
 import java.util.ArrayList;
 
 public class Client {
 
     String name, lastname, email;
+    int id;
 
     ArrayList<Evenement> tickets;
 
-public Client(){
-}
-    public Client(String name, String lastname, String email) {
-        this.name = name;
-        this.lastname = lastname;
-        this.email = email;
-        this.tickets = new ArrayList<>();
+    public int getId() {
+        return id;
     }
 
+    public void setId(int name) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -69,6 +70,23 @@ public Client(){
         }
     }
     //Fin de ChatGPT
+
+    public Client(){
+    }
+    public Client(String name, String lastname, String email) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.tickets = new ArrayList<>();
+    }
+
+    public Client(String name, String lastname, String email, int id) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Client{" +

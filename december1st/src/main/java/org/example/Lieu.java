@@ -1,6 +1,9 @@
+package org.example;
+
 public class Lieu {
 
     String name;
+    int id;
 
     String address;
 

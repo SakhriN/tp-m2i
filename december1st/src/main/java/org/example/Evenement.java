@@ -1,8 +1,11 @@
+package org.example;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Evenement {
     String name;
+    int id;
     LocalDate localdate;
     LocalTime localtime;
     Lieu lieu;
