@@ -1,7 +1,9 @@
 package org.example;
 
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Date;
 
 public class Evenement {
     String name;
@@ -12,21 +14,13 @@ public class Evenement {
     int billetsDispo;
     float price;
     int nbTicketsSold;
-
-    public Evenement() {
-
+    public int getId() {
+        return id;
     }
 
-    public Evenement(String name, Lieu lieu, float price, int nbTicketsSold) {
-        this.name = name;
-        this.localdate = LocalDate.now();
-        this.localtime = LocalTime.now();
-        this.lieu = lieu;
-        this.price = price;
-        this.nbTicketsSold = nbTicketsSold;
-        this.billetsDispo = lieu.capacity-nbTicketsSold;
+    public void setId(int id) {
+        this.id = id;
     }
-
     public String getName() {
         return name;
     }
@@ -84,10 +78,46 @@ public class Evenement {
         }
     }
     //Fin de ChatGPT
+
+
+    public Evenement() {
+
+    }
+
+    public Evenement(String name, Lieu lieu, float price, int nbTicketsSold) {
+        this.name = name;
+        this.localdate = LocalDate.now();
+        this.localtime = LocalTime.now();
+        this.lieu = lieu;
+        this.price = price;
+        this.nbTicketsSold = nbTicketsSold;
+        this.billetsDispo = lieu.capacity-nbTicketsSold;
+    }
+
+    public Evenement(int id, String name , Lieu lieu, float price, int nbTicketsSold) {
+        this.id = id;
+        this.name = name;
+        this.lieu = lieu;
+        this.price = price;
+        this.nbTicketsSold = nbTicketsSold;
+    }
+
+    public Evenement(int id, String name, Date date, Time time, Lieu lieu, int billetsDispo, float price, int nbTicketsSold) {
+        this.name = name;
+        this.id = id;
+        this.localdate = localdate;
+        this.localtime = localtime;
+        this.lieu = lieu;
+        this.billetsDispo = billetsDispo;
+        this.price = price;
+        this.nbTicketsSold = nbTicketsSold;
+    }
+
     @Override
     public String toString() {
-        return "Evenement :" +
-                "name='" + name + '\'' +
+        return "Evenement : " +
+                "id='" + id +
+                "name='" + name +
                 ", localdate=" + localdate +
                 ", localtime=" + localtime +
                 ", lieu=" + lieu +

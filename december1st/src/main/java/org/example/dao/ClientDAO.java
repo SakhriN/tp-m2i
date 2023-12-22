@@ -7,7 +7,7 @@ public interface ClientDAO {
 
     void ajouterClient(Client client);
     void mettreAJourClient(Client client);
-    void supprimerClient(String emailClient);
-    Client obtenirClientParEmail(String emailClient);
+    void supprimerClient(int idClient);
+    Client obtenirClientParID(int idClient);
     List<Client> obtenirTousLesClients();
 }

@@ -9,7 +9,7 @@ public interface LieuDAO {
 
     void ajouterLieu(Lieu lieu);
     void mettreAJourLieu(Lieu lieu);
-    void supprimerLieu(String nomLieu);
-    Lieu obtenirLieuParNom(String nomLieu);
-    List<Lieu> obtenirTousLesLieus();
+    void supprimerLieu(int idLieu);
+    Lieu obtenirLieuParId(int idLieu);
+    List<Lieu> obtenirTousLesLieux();
 }

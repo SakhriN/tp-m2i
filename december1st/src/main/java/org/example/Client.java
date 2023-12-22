@@ -80,20 +80,21 @@ public class Client {
         this.tickets = new ArrayList<>();
     }
 
-    public Client(String name, String lastname, String email, int id) {
+    public Client( int id, String name, String lastname, String email) {
+        this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
-        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
+        return "Client : " +
+                "id='" + id +
+                ", name='" + name +
+                ", lastname='" + lastname +
+                ", email='" + email +
                 ", tickets=" + tickets +
-                '}';
+                " | ";
     }
 }

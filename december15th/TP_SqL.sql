@@ -117,8 +117,9 @@ SELECT * FROM clients WHERE email LIKE "%@%";
 
 -- 5 :
 SELECT * FROM clients WHERE LENGTH(prenom) = (SELECT (MIN(LENGTH(prenom))) FROM clients);
+
 -- 6 : 
 SELECT COUNT(*) AS "Nombre de clients enregistrés" FROM clients;
 
 -- 7 :
-SELECT * FROM clients ORDER BY nom LIMIT 120 OFFSET 3 ;
+SELECT * FROM clients ORDER BY nom LIMIT 12 OFFSET 3 ;

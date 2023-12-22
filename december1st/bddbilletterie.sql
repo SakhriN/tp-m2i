@@ -30,6 +30,7 @@ email VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS cli_eve(
+nb_tickets_sold INT,
 id_client INT NOT NULL,
 id_evenement INT NOT NULL,
 CONSTRAINT fk_id_client FOREIGN KEY(id_client) REFERENCES client(id),

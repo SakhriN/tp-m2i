@@ -41,11 +41,12 @@ public class ClientDAOImpl implements ClientDAO {
     public void mettreAJourClient(Client client) {
         connection = DatabaseManager.getConnection();
         try {
-            sql = "UPDATE client SET name = ?, last_name = ? WHERE email = ?";
+            sql = "UPDATE client SET name = ?, last_name = ?, email = ? WHERE id = ?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, client.getName());
             preparedStatement.setString(2, client.getLastname());
             preparedStatement.setString(3, client.getEmail());
+            preparedStatement.setInt(4, client.getId());
             int nbrows = preparedStatement.executeUpdate();
             System.out.println("nombre de lignes modifiées : " + nbrows);
         } catch (SQLException e) {
@@ -55,15 +56,15 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
-    public void supprimerClient(String emailClient) {
+    public void supprimerClient(int idClient) {
         connection = DatabaseManager.getConnection();
-        sql = "DELETE FROM client WHERE email = ?";
+        sql = "DELETE FROM client WHERE id = ?";
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,emailClient);
+            preparedStatement.setInt(1, idClient);
             int nbrows = preparedStatement.executeUpdate();
 
-            System.out.println("Suppression effectuée. nombre de ligne supprimées : "+nbrows);
+            System.out.println("Suppression effectuée. nombre de ligne supprimées : " + nbrows);
         } catch (SQLException e) {
 
         }
@@ -71,16 +72,16 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
-    public Client obtenirClientParEmail(String emailClient) {
+    public Client obtenirClientParID(int idClient) {
         connection = DatabaseManager.getConnection();
         client = null;
         try {
-            sql = "SELECT * FROM client WHERE email = ?";
+            sql = "SELECT * FROM client WHERE id = ?";
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, emailClient);
+            preparedStatement.setInt(1, idClient);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                client = new Client(resultSet.getString("name"), resultSet.getString("last_name"),
+                client = new Client(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("last_name"),
                         resultSet.getString("email"));
             }
         } catch (SQLException e) {
@@ -95,13 +96,17 @@ public class ClientDAOImpl implements ClientDAO {
         connection = DatabaseManager.getConnection();
         try {
             sql = "SELECT * FROM client";
-            clients = null;
+            clients = new ArrayList<>();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
-                clients.add(
-                        new Client(resultSet.getString("name"), resultSet.getString("last_name"),
-                                resultSet.getString("email")));
+                clients.add(new Client(
+                                resultSet.getInt("id"),
+                                resultSet.getString("name"),
+                                resultSet.getString("last_name"),
+                                resultSet.getString("email")
+                        )
+                );
             }
         } catch (SQLException e) {
             System.out.println("Labagarre");

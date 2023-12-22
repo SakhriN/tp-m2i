@@ -20,6 +20,22 @@ public Lieu(){
         this.capacity = capacity;
     }
 
+    public Lieu(int id,String name, String address, int capacity) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.capacity = capacity;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -47,10 +63,11 @@ public Lieu(){
 
     @Override
     public String toString() {
-        return "Lieu{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", capacity=" + capacity +
-                '}';
+        return "Lieu numéro : " +
+                ", id= " + name +
+                ", name= " + name +
+                ", address= " + address +
+                ", capacity= " + capacity +
+                " | ";
     }
 }
