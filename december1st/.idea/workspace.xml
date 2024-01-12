@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad11ac86-77d0-4f28-85d2-b6bd5f9ec4bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../december15th/TP_SqL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../december15th/TP_SqL.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bddbilletterie.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bddbilletterie.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Billetterie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Billetterie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Evenement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Lieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Lieu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/ClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ClientDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/ClientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ClientDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/EvenementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/EvenementDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/EvenementDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/EvenementDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/LieuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/LieuDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/LieuDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/LieuDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +37,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/tails/Documents/tp-m2i/december1st",
+    "last_opened_file_path": "C:/Users/tails/Documents/JPA/Exo_Todo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1703154496804</updated>
       <workItem from="1703154497818" duration="15130000" />
-      <workItem from="1703232234274" duration="9536000" />
+      <workItem from="1703232234274" duration="9993000" />
+      <workItem from="1704442030128" duration="70000" />
     </task>
     <servers />
   </component>
