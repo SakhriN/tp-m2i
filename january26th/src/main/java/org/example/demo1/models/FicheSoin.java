@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "fichesoin")
-public class FicheSoin{
+public class FicheSoin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +15,7 @@ public class FicheSoin{
     int duree_fi;
 
     @ManyToOne
+    @JoinColumn
     Consultation consultation;
 
     public int getId() {

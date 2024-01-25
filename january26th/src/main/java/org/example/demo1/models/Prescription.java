@@ -15,6 +15,7 @@ public class Prescription {
     int duree_pr;
 
     @ManyToOne
+    @JoinColumn
     Consultation consultation;
 
     public int getId() {

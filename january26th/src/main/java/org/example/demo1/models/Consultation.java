@@ -3,6 +3,7 @@ package org.example.demo1.models;
 import javax.persistence.*;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "consultation")
@@ -15,6 +16,12 @@ public class Consultation {
 
     @ManyToOne
     Patient patient;
+
+    @OneToMany(mappedBy = "consultation")
+    List<FicheSoin> ficheSoins;
+
+    @OneToMany(mappedBy = "consultation")
+    List<Prescription> prescriptions;
 
     public int getId() {
         return id;
