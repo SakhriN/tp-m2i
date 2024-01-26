@@ -15,6 +15,7 @@ public class Consultation {
     String nom_medecin;
 
     @ManyToOne
+    @JoinColumn
     Patient patient;
 
     @OneToMany(mappedBy = "consultation")

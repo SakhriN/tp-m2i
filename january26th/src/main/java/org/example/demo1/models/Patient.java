@@ -16,7 +16,7 @@ public class Patient{
 
     Date dateNais;
 
-    @OneToMany
+    @OneToMany(mappedBy = "patient")
     List<Consultation> consultationList;
 
 
