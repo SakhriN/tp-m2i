@@ -16,7 +16,7 @@ public class Patient{
 
     Date dateNais;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
     List<Consultation> consultationList;
 
 

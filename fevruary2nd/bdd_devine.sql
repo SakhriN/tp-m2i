@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS tp2feb;
+
+USE tp2feb;
+
+CREATE TABLE IF NOT EXISTS devine(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+devine_text VARCHAR(250),
+answer VARCHAR(50)
+);
+
+
+-- DROP TABLE devine;
+SELECT * FROM devine;
+-- DELETE FROM devine;
