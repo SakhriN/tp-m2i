@@ -10,15 +10,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 import java.util.List;
 
-public class PatientDAOImpl implements PatientDAO {
-
-    StandardServiceRegistry registry ;
-    SessionFactory sessionFactory;
+public class PatientDAOImpl extends DAOService implements PatientDAO  {
     Transaction tx = null;
 
     public PatientDAOImpl() {
-        registry = new StandardServiceRegistryBuilder().configure().build();
-        sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+        registre = new StandardServiceRegistryBuilder().configure().build();
+        sessionFactory = new MetadataSources(registre).buildMetadata().buildSessionFactory();
     }
 
     public void Create(Patient patient) {

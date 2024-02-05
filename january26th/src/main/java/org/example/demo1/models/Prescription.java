@@ -8,22 +8,22 @@ public class Prescription {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    int id_pr;
 
     String type_medicament;
 
     int duree_pr;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_co_pr")
     Consultation consultation;
 
     public int getId() {
-        return id;
+        return id_pr;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_pr) {
+        this.id_pr = id_pr;
     }
 
     public String getType_medicament() {
@@ -64,8 +64,8 @@ public class Prescription {
         this.consultation = consultation;
     }
 
-    public Prescription(int id, String type_medicament, int duree_pr, Consultation consultation) {
-        this.id = id;
+    public Prescription(int id_pr, String type_medicament, int duree_pr, Consultation consultation) {
+        this.id_pr = id_pr;
         this.type_medicament = type_medicament;
         this.duree_pr = duree_pr;
         this.consultation = consultation;
@@ -74,10 +74,9 @@ public class Prescription {
     @Override
     public String toString() {
         return "Prescription : " +
-                "id = " + id +
+                "id = " + id_pr +
                 ", type_medicament = " + type_medicament +
                 ", duree_pr = " + duree_pr +
-                ", consultation = " + consultation +
                 ". ";
     }
 

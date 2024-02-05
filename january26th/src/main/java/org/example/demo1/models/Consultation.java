@@ -10,12 +10,12 @@ import java.util.List;
 public class Consultation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    int id_co;
     Date datecons;
     String nom_medecin;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_pa")
     Patient patient;
 
     @OneToMany(mappedBy = "consultation")
@@ -25,11 +25,11 @@ public class Consultation {
     List<Prescription> prescriptions;
 
     public int getId() {
-        return id;
+        return id_co;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_co) {
+        this.id_co = id_co;
     }
 
     public Date getDatecons() {
@@ -70,8 +70,8 @@ public class Consultation {
         this.patient = patient;
     }
 
-    public Consultation(int id, Date datecons, String nom_medecin, Patient patient) {
-        this.id = id;
+    public Consultation(int id_co, Date datecons, String nom_medecin, Patient patient) {
+        this.id_co = id_co;
         this.datecons = datecons;
         this.nom_medecin = nom_medecin;
         this.patient = patient;
@@ -79,11 +79,12 @@ public class Consultation {
 
     @Override
     public String toString() {
-        return "Consultation{" +
-                "id=" + id +
-                ", datecons=" + datecons +
-                ", nom_medecin='" + nom_medecin + '\'' +
-                ", patient=" + patient +
-                '}';
+        return "Consultation : " +
+                "id = " + id_co +
+                ", datecons = " + datecons +
+                ", nom_medecin = " + nom_medecin +
+                ", fiches_soin = " + ficheSoins +
+                ", prescriptions = " + prescriptions +
+                ". ";
     }
 }

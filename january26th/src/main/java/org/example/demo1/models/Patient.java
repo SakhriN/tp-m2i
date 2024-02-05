@@ -8,9 +8,10 @@ import java.util.List;
 @Entity
 @Table(name = "patient")
 public class Patient{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    int id_pa;
 
     String nom, prenom, photo;
 
@@ -21,11 +22,11 @@ public class Patient{
 
 
     public int getId() {
-        return id;
+        return id_pa;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_pa = id;
     }
 
     public String getNom() {
@@ -86,8 +87,8 @@ public class Patient{
         this.consultationList = consultationList;
     }
 
-    public Patient(int id, String nom, String prenom, String photo, Date dateNais, List<Consultation> consultationList) {
-        this.id = id;
+    public Patient(int id_pa, String nom, String prenom, String photo, Date dateNais, List<Consultation> consultationList) {
+        this.id_pa = id_pa;
         this.nom = nom;
         this.prenom = prenom;
         this.photo = photo;
@@ -98,7 +99,7 @@ public class Patient{
     @Override
     public String toString() {
         return "Patient : " +
-                "id = " + id +
+                "id = " + id_pa +
                 ", nom = " + nom +
                 ", prenom = " + prenom +
                 ", photo = " + photo +

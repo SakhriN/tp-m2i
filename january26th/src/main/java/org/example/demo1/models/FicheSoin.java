@@ -8,22 +8,22 @@ public class FicheSoin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    int id_fi;
 
     String type_soin;
 
     int duree_fi;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_co_fi")
     Consultation consultation;
 
     public int getId() {
-        return id;
+        return id_fi;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_fi) {
+        this.id_fi = id_fi;
     }
 
     public String getType_soin() {
@@ -64,8 +64,8 @@ public class FicheSoin {
         this.consultation = consultation;
     }
 
-    public FicheSoin(int id, String type_soin, int duree_fi, Consultation consultation) {
-        this.id = id;
+    public FicheSoin(int id_fi, String type_soin, int duree_fi, Consultation consultation) {
+        this.id_fi = id_fi;
         this.type_soin = type_soin;
         this.duree_fi = duree_fi;
         this.consultation = consultation;
@@ -74,10 +74,9 @@ public class FicheSoin {
     @Override
     public String toString() {
         return "FicheSoin : " +
-                "id = " + id +
+                "id = " + id_fi +
                 ", type_soin = " + type_soin +
                 ", duree_fi = " + duree_fi +
-                ", consultation = " + consultation +
                 ". ";
     }
 

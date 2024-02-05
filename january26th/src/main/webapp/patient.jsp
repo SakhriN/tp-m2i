@@ -6,6 +6,7 @@
 </head>
 <body>
 <c:forEach items="${patients}" var="pat">
+    <div>yo</div>
     <div>${pat.getNom}</div>
     <div>${pat.getPrenom}</div>
     <img src="${pat.getPhoto}"/>
