@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail recette</title>
+    <span th:replace="~{page_home :: bootstrapImports}"></span>
+</head>
+<body>
+<header>
+    <h1>Liste des recettes</h1>
+    <nav th:replace="~{page_home :: navbarstylé}">
+    </nav>
+</header>
+<main>
+    <h2>Détail de ma recette</h2>
+    <h2>Nom : <b><span th:text="${marecette.name}"></span></b></h2>
+    <hr>
+    <p>Temps de préparation : <span th:text="${marecette.time_preparation}"></span></p>
+    <p>Temps de cuisson : <span th:text="${marecette.time_cooking}"></span></p>
+    <h2>Ingredients</h2>
+    <hr>
+    <div th:each="i:${marecette.ingredients}"><span th:text="${i}"></span></div>
+    <p>Instructions : </p>
+    <hr>
+    <span th:text="${marecette.instructions}"></span>
+    <hr>
+    <a class="btn btn-outline-dark" th:href="@{/recipes}">Retour a la liste des recettes</a>
+    <a class="btn btn-warning" th:href="@{/edit/{id}(id=${marecette.getId()})}">Editer de l'étudiant</a>
+    <a class="btn btn-danger" th:href="@{/delete/{id}(id=${marecette.getId()})}">Suppression de l'étudiant</a>
+</main>
+</body>
+</html>

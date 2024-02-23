@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS tp23feb;
+
+USE tp23feb;

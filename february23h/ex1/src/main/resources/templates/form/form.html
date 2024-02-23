@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de recette</title>
+    <span th:replace="~{page_home :: bootstrapImports}"></span>
+</head>
+<body>
+<main>
+    <h1 th:if="${recipe.getId()==null}">Formulaire d'ajout de recette</h1>
+    <h1 th:unless="${recipe.getId()==null}">Formulaire de modification de recette</h1>
+    <hr></hr>
+    <form th:if="${recipe.getId()==null}" th:action="@{/ajout}"  th:object="${recipe}" method="post">
+        <div>
+            <label th:for="name"> Nom de recette : </label>
+            <input type="text" th:id="name" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+        <div>
+            <label th:for="time_cooking"> Temps de cuisson : </label>
+            <input type="number" th:id="time_cooking" th:field="*{time_cooking}">
+            <span th:if="${#fields.hasErrors('time_cooking')}" th:errors="*{time_cooking}"></span>
+        </div>
+        <div>
+            <label th:for="time_preparation"> Temps de préparation : </label>
+            <input type="number" th:id="time_preparation" th:field="*{time_preparation}">
+            <span th:if="${#fields.hasErrors('time_preparation')}" th:errors="*{time_preparation}"></span>
+        </div>
+        <div>
+            <label th:for="instructions"> Intructions : </label>
+            <input type="text" th:id="instructions" th:field="*{instructions}">
+            <span th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}"></span>
+        </div>
+
+        <div>
+            <label th:for="ingredients"> Ingredient : </label>
+            <input type="text" th:id="ingredients" th:field="*{ingredients}">
+            <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
+        </div>
+
+        <button class="btn btn-outline-success">Ajouter</button>
+        <a class="btn btn-outline-danger" th:href="@{/recipes}">Annuler</a>
+    </form>
+
+    <form th:unless="${recipe.getId()==null}" th:action="@{/edit/{id}(id=${recipe.getId()})}"  th:object="${recipe}" method="post">
+        <div>
+            <label th:for="name"> Nom de recette : </label>
+            <input type="text" th:id="name" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+        <div>
+            <label th:for="time_cooking"> Temps de cuisson : </label>
+            <input type="number" th:id="time_cooking" th:field="*{time_cooking}">
+            <span th:if="${#fields.hasErrors('time_cooking')}" th:errors="*{time_cooking}"></span>
+        </div>
+        <div>
+            <label th:for="time_preparation"> Temps de préparation : </label>
+            <input type="number" th:id="time_preparation" th:field="*{time_preparation}">
+            <span th:if="${#fields.hasErrors('time_preparation')}" th:errors="*{time_preparation}"></span>
+        </div>
+        <div>
+            <label th:for="instructions"> Intructions : </label>
+            <input type="text" th:id="instructions" th:field="*{instructions}">
+            <span th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}"></span>
+        </div>
+
+        <div>
+            <label th:for="ingredients"> Ingredient : </label>
+            <input type="text" th:id="ingredients" th:field="*{ingredients}">
+            <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}"></span>
+        </div>
+        <button class="btn btn-outline-warning">Modifier</button>
+        <a class="btn btn-outline-danger" th:href="@{/recipes}">Annuler</a>
+    </form>
+</main>
+</body>
+</html>
