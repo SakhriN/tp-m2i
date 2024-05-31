@@ -11,6 +11,8 @@ public interface ConsultationDAO {
 
     public List<Consultation> ReadAll();
 
+    public List<Consultation> ReadById(int id);
+
     public void Update(Consultation consultation);
 
     public void Delete(int id);

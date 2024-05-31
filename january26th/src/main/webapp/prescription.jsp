@@ -1,16 +1,26 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tails
-  Date: 26/01/2024
-  Time: 10:50
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
-    <title>Prescriptions</title>
+    <title>Liste des Fiches de soin de la consultation numéro ${conId}</title>
 </head>
 <body>
-
+<table>
+    <thead>
+    <tr>
+        <th>Type de Medicament</th>
+        <th>Temps d'activation du médicament (en minutes)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${prescriptions}" var="psp">
+        <tr>
+            <td>${psp.type_medicament}</td>
+            <td>${psp.duree_pr}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<a href="consultation?id=${patId}">Revenir a la liste des consultations</a>
 </body>
 </html>

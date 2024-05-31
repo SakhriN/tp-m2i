@@ -58,18 +58,6 @@ public class Prescription {
         this.duree_pr = duree_pr;
     }
 
-    public Prescription(String type_medicament, int duree_pr, Consultation consultation) {
-        this.type_medicament = type_medicament;
-        this.duree_pr = duree_pr;
-        this.consultation = consultation;
-    }
-
-    public Prescription(int id_pr, String type_medicament, int duree_pr, Consultation consultation) {
-        this.id_pr = id_pr;
-        this.type_medicament = type_medicament;
-        this.duree_pr = duree_pr;
-        this.consultation = consultation;
-    }
 
     @Override
     public String toString() {

@@ -79,23 +79,6 @@ public class Patient{
         this.dateNais = dateNais;
     }
 
-    public Patient(String nom, String prenom, String photo, Date dateNais, List<Consultation> consultationList) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.photo = photo;
-        this.dateNais = dateNais;
-        this.consultationList = consultationList;
-    }
-
-    public Patient(int id_pa, String nom, String prenom, String photo, Date dateNais, List<Consultation> consultationList) {
-        this.id_pa = id_pa;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.photo = photo;
-        this.dateNais = dateNais;
-        this.consultationList = consultationList;
-    }
-
     @Override
     public String toString() {
         return "Patient : " +
@@ -104,7 +87,6 @@ public class Patient{
                 ", prenom = " + prenom +
                 ", photo = " + photo +
                 ", dateNais = " + dateNais +
-                ", consultationList = " + consultationList +
                 ". ";
     }
 }

@@ -39,6 +39,8 @@ id_co_fi INT,
 -- DROP TABLE prescription;
 -- DROP TABLE fichesoin;
 
+CREATE DATABASE exospringsecu;
+USE exospringsecu;
 
 
 

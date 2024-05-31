@@ -18,10 +18,10 @@ public class Consultation {
     @JoinColumn(name = "id_pa")
     Patient patient;
 
-    @OneToMany(mappedBy = "consultation")
+    @OneToMany(mappedBy = "consultation", fetch = FetchType.EAGER)
     List<FicheSoin> ficheSoins;
 
-    @OneToMany(mappedBy = "consultation")
+    @OneToMany(mappedBy = "consultation", fetch = FetchType.LAZY)
     List<Prescription> prescriptions;
 
     public int getId() {
@@ -70,21 +70,12 @@ public class Consultation {
         this.patient = patient;
     }
 
-    public Consultation(int id_co, Date datecons, String nom_medecin, Patient patient) {
-        this.id_co = id_co;
-        this.datecons = datecons;
-        this.nom_medecin = nom_medecin;
-        this.patient = patient;
-    }
-
     @Override
     public String toString() {
         return "Consultation : " +
                 "id = " + id_co +
                 ", datecons = " + datecons +
                 ", nom_medecin = " + nom_medecin +
-                ", fiches_soin = " + ficheSoins +
-                ", prescriptions = " + prescriptions +
                 ". ";
     }
 }
